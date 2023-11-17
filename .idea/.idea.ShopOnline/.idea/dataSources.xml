@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="ShopOnline@RPOTI0015" uuid="60e93e3a-dd4a-4cd3-bf5e-5aeb8f9754d8">
+    <data-source source="LOCAL" name="@RPOTI0015" uuid="853287e4-a80a-45f0-83f6-ca99d0f6f47c">
       <driver-ref>sqlserver.jtds</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:jtds:sqlserver://RPOTI0015:1433/ShopOnline;instance=SQLEXPRESS</jdbc-url>
+      <jdbc-url>jdbc:jtds:sqlserver://RPOTI0015:1433;instance=SQLEXPRESS</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
