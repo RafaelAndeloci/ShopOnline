@@ -38,12 +38,29 @@ public class ProductController : ControllerBase
 
 
     [HttpGet]
-    [Route("GetById/{id:int}")]
+    [Route("{id:int}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var product = await _productRepository.GetById(id);
+        try
+        {
+            var product = await _productRepository.GetById(id);
 
-        return product is null ? NoContent() : Ok(product);
+            if (product is null) return BadRequest();
+            
+            var productCategory = await _productRepository.GetCategoryById(product.CategoryId);
+
+            if (productCategory is null) return BadRequest();
+            
+            var productDto = product.ConvertToDto(productCategory);
+            
+            return Ok(productDto);
+        }
+        catch (Exception)
+        {
+            return StatusCode(
+                StatusCodes.Status500InternalServerError, 
+                "Error retrieving data from the database");
+        }
     }
 
     // public void Create(Product entity)

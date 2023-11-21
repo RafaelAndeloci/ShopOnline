@@ -1,0 +1,21 @@
+﻿@if (Test is null)
+{
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+}
+else
+{
+  <div>
+    <h3>@Test</h3>
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+}
+
+@code
+{
+  [Parameter]
+  public string? Test { get; set; }
+}
